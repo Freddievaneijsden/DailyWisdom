@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Images</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+
+        .image-container {
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Wimages</h2>
+    <div class="d-flex gap-2 mb-3">
+        <a href="/uploadimage" class="btn btn-primary">Upload Wimage</a>
+        <a href="/" class="btn btn-primary">Meny</a>
+    </div>
+    <div class="row">
+        <div th:each="image : ${images}" class="col-md-4 mb-3">
+            <div>
+                <div class="image-container">
+                    <img th:src="@{'/uploads/' + ${image}}" class="card-img-top" alt="Uploaded Wimage">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

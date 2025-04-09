@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<section class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h2 class="text-center">Upload Wimage</h2>
+
+                <!-- Success message -->
+                <p th:if="${msg}" th:text="${msg}" class="alert alert-success"></p>
+
+                <form method="post" th:action="@{/upload}" enctype="multipart/form-data" class="border p-4 rounded shadow">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Select an image to upload</label>
+                        <input type="file" name="image" id="image" accept="image/*" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Upload Wimage</button>
+                    <a href="/show-images" class="btn btn-success mt-3">Back to Wimages</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

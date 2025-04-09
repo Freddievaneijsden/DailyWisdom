@@ -1,0 +1,13 @@
+type Query {
+    getLatestDailyWisdom: DailyWisdom
+    getAllDailyWisdom: [DailyWisdom]
+}
+
+type Mutation {
+    addDailyWisdom(message: String!): DailyWisdom
+}
+
+type DailyWisdom {
+    id: ID!
+    message: String!
+}
